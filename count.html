@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const root = document.getElementById('root');
+
+        function App(){
+            const [count,setCount] = React.useState(90);
+
+            return (
+                <>
+                    <h1>Counter</h1>
+                    <h2>Counter Value: {count} </h2>
+                    <button disabled={count > 200} onClick={()=>setCount(count + 8)}>Plus</button>
+                    <button disabled={count <= 0} onClick={()=>setCount(count - 1)}>Dec</button>
+                    <button onClick={()=>setCount(0)}>Reset</button>
+                    <p>We can show the value here also: {count}</p>
+                </>
+            )
+        }
+
+        const reactRoot = ReactDOM.createRoot(root);
+        reactRoot.render(<App/>);
+    </script>
+</body>
+</html>
