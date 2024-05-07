@@ -34,7 +34,7 @@
             return(
                 <>
                     <input type="text" value={msg} onChange={(e)=>setMsg(e.target.value)}/>
-                    <p>Your message is {msg}</p>
+                    <p>Your message is: <b>{msg}</b></p>
                     <button onClick={()=>setMsg("")}>Reset</button>
                 </>
             )
