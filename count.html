@@ -13,17 +13,29 @@
     <script type="text/babel">
         const root = document.getElementById('root');
 
-        function App(){
-            const [count,setCount] = React.useState(90);
+        // function App(){
+        //     const [count,setCount] = React.useState(90);
 
-            return (
+        //     return (
+        //         <>
+        //             <h1>Counter</h1>
+        //             <h2>Counter Value: {count} </h2>
+        //             <button disabled={count > 200} onClick={()=>setCount(count + 8)}>Plus</button>
+        //             <button disabled={count <= 0} onClick={()=>setCount(count - 1)}>Dec</button>
+        //             <button onClick={()=>setCount(0)}>Reset</button>
+        //             <p>We can show the value here also: {count}</p>
+        //         </>
+        //     )
+        // }
+
+        function  App(){
+            const[msg, setMsg] = React.useState("");
+
+            return(
                 <>
-                    <h1>Counter</h1>
-                    <h2>Counter Value: {count} </h2>
-                    <button disabled={count > 200} onClick={()=>setCount(count + 8)}>Plus</button>
-                    <button disabled={count <= 0} onClick={()=>setCount(count - 1)}>Dec</button>
-                    <button onClick={()=>setCount(0)}>Reset</button>
-                    <p>We can show the value here also: {count}</p>
+                    <input type="text" value={msg} onChange={(e)=>setMsg(e.target.value)}/>
+                    <p>Your message is {msg}</p>
+                    <button onClick={()=>setMsg("")}>Reset</button>
                 </>
             )
         }
